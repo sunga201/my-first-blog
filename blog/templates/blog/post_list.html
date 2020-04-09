@@ -6,18 +6,12 @@
         <div>
             <h1><a href=""> sung's blog</a></h1>
         </div>
-        <div>
-            <p>published : 09.04.2020, 13:55</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta
-                gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, condimentum nibh, ut fermentum massa jsuto sit amet risus.</p>
-        </div>
-
-        <div>
-            <p>published : 09.04.2020, 13:57</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.Donec id elit non mi porta
-                gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published : {{post.published_date}}</p>
+                <p><a href="">{{post.title}}</a></p>
+                <p>{{post.text|linebreaksbr}}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
